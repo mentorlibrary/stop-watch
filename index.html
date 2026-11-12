@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>멘토라이브러리 스톱워치</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <main class="wrap">
+    <div class="place">멘토라이브러리 · 한강 스톱워치</div>
+    <svg class="dial" viewBox="0 0 200 200" role="img" aria-label="아날로그 스톱워치 다이얼">
+      <circle class="face" cx="100" cy="100" r="96"></circle>
+      <g id="ticks"></g>
+      <circle class="sub-face" cx="100" cy="132" r="18"></circle>
+      <text class="sub-label" x="100" y="160">MIN</text>
+      <line id="subHand" class="sub-hand" x1="100" y1="132" x2="100" y2="117"></line>
+      <line id="hand" class="hand" x1="100" y1="112" x2="100" y2="12"></line>
+      <circle class="hub" cx="100" cy="100" r="4"></circle>
+    </svg>
+
+    <div class="readout" id="readout" aria-live="off">00:00<span class="cs">.00</span></div>
+
+    <div class="controls">
+      <button id="startBtn" type="button" class="primary">시작</button>
+      <button id="stopBtn" type="button" class="stop" disabled>정지</button>
+      <button id="resetBtn" type="button" disabled>초기화</button>
+    </div>
+    <div class="keys"><kbd>Space</kbd> 시작/정지 · <kbd>R</kbd> 초기화</div>
+  </main>
+
+  <script src="scene.js"></script>
+  <script src="stopwatch.js"></script>
+</body>
+</html>
